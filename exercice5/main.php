@@ -8,7 +8,7 @@ class Ticket
     public $location;
     public $price;
 
-    public function __construct($id, $artist, $date, $hour, $location, $price=null)
+    public function __construct($id, $artist, $date, $hour, $location, $price="")
     {
         $this->id = $id;
         $this->artist = $artist;
@@ -22,14 +22,12 @@ class Ticket
 
     public function ticketInformations()
     {
-        $details = `<p>Nom de l'artiste : $this->artist></p>
-               <p>Id du billet : $this->id</p>
-               <p>Date du concert : $this->date</p>
-               <p>Heure du concert : $this->hour</p>
-               <p>Lieu du concert : $this->location</p>`;
+        //  =
+        $details = "Nom de l'artiste : " . $this->artist . ", id du billet : " . $this->id . ", date du concert : " . $this->date .
+        ", heure du concert : " . $this->hour . ", lieu du concert : " . $this->location;
 
-        if (!isNull($this->price)) {
-            $details = $details .`<p>Lieu du concert : $this->price</p>`;
+        if ($this->price != "") {
+            $details = $details . ", prix du billet : " . $this->price;
         }
         return $details;
     }
@@ -38,4 +36,4 @@ class Ticket
 $ticketMadonna = new Ticket(1, "Madonna", "25 Mars 2020", "20H00", "Marseille", "25€");
 $ticketTheWeeknd = new Ticket(2, "Michael Jackson", "25 Mars 2020", "20H00", "Paris");
 
-echo($ticketMadonna->ticketInformations());
+echo($ticketTheWeeknd->ticketInformations());
