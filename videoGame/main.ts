@@ -49,8 +49,8 @@ class Player {
             console.log("Félicitation vous êtes l'heureux pocesseur d'un nouveau " + item.name);
             console.log("Les élements présents dans l'inventaire sont : ")
             for (let i = 0; i < this.items.length; i++) {
-                let currentElement = this.items[i];
-                console.log(currentElement.name)
+                let currentElement = this.items[i].name;
+                console.log(currentElement)
             }
             return true;
         }
