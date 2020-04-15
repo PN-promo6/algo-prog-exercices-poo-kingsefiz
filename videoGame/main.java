@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.ListIterator;
+
+
 abstract class Item {
     String name;
     int size;
@@ -43,16 +46,21 @@ class Player {
     }
 
     boolean addItem(Item item) {
-        boolean isAdded = false;
         if (item.size <= this.inventorySize) {
             this.items.add(item);
             this.inventorySize = this.inventorySize - item.size;
             System.out.println("Félicitation vous êtes l'heureux pocesseur d'un nouveau " + item.name);
-            isAdded = true;
-        } else {
-            System.out.println("Vous n'avez plus de place, faites de la place pour ajouter " + item.name);
-        }
-        return isAdded;
+            System.out.println("Votre inventaire contient : ");
+            ListIterator<Item> iterator = items.listIterator();
+            while (iterator.hasNext()){
+                String currentItem = (iterator.next().name);
+                System.out.println(currentItem);
+            }
+            return true;
+        } 
+        
+        System.out.println("Vous n'avez plus de place, faites de la place pour ajouter " + item.name);
+        return false;
     }
 }
 
@@ -66,5 +74,7 @@ class Playground {
         Arrow redArrow = new Arrow("Red Arrow", 1, 5);
         Arrow blueArrow = new Arrow("Blue Arrow", 1, 5);
         mario.addItem(greenTp);
+        mario.addItem(greenArrow);
+
     }
 }
