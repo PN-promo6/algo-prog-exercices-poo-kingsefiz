@@ -2,7 +2,7 @@ class Playground {
     public static void main(String[ ] args) {
         Ticket ticketMadonna = new Ticket(1, "Madonna", "22 Février 2019", "20h00", "Le Dome", "95€");
         Ticket ticketTheWeeknd = new Ticket(2, "The Weeknd", "15 Novembre", "21h00", "Accor Arena");
-        System.out.println(ticketMadonna.ticketInformations());
+        System.out.println(ticketTheWeeknd.ticketInformations());
     }
 }
 
@@ -32,10 +32,10 @@ public class Ticket {
     }
 
     String ticketInformations(){
-        String details = "Nom de l'artiste " + this.artist + ", Id du billet : " + this.id + ", date du concert : " + this.date + ", Heure du concert : " + this.hour + ", Lieu du concert : " + this.location;
+        String details = "<p>Nom de l'artiste " + this.artist + "</p> <p>Id du billet : " + this.id + "</p><p>date du concert : " + this.date + "</p><p> Heure du concert : " + this.hour + " </p> <p>Lieu du concert : " + this.location + "</p>";
 
         if (this.price != "" ) {
-            details = details + ", prix du billet : " + this.price;
+            details = details + "<p> </p> prix du billet : " + this.price;
         }
 
         return details;
