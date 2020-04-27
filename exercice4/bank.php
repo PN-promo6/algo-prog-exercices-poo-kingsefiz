@@ -29,4 +29,4 @@ class Client
 
 $stephane = new Client("Stéphane", "48468FDE84FA");
 $stephane->setName("Nicolas");
-echo ($stephane->getName());
+echo($stephane->getName());

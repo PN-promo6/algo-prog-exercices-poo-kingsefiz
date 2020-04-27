@@ -19,13 +19,13 @@ class Ticket {
 
   ticketInformations(): string {
     let details: string = `
-    <p>Nom de l'artiste : ${this.artist}</p>
-    <p>Id du billet : ${this.ticketId}</p>
-    <p>Date du concert : ${this.date}</p>
-    <p>Heure du concert : ${this.hour}</p>
-    <p>Lieu du concert : ${this.location}</p>`;
+    <p>Nom de l'artiste : {this.artist}</p>
+    <p>Id du billet : {this.ticketId}</p>
+    <p>Date du concert : {this.date}</p>
+    <p>Heure du concert : {this.hour}</p>
+    <p>Lieu du concert : {this.location}</p>`;
     if (this.price != "") {
-      details = details + `<p>Prix du billet : ${this.price}</p>`;
+      details = details + `<p>Prix du billet : {this.price}</p>`;
       console.log("Price : " + this.price)
     }
     return (details);
